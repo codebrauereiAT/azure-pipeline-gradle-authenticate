@@ -1,0 +1,15 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: Gradle@2
+    inputs:
+      gradleWrapperFile: 'gradlew'
+      tasks: 'build'
+      jdkVersionOption: 1.11
+    displayName: Execute gradle
